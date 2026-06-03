@@ -14,8 +14,8 @@ app.use(express.urlencoded({ extended: false }));
 app.get("/health", (req, res) => res.json({ status: "ok" }));
 
 // API routes
-app.use("/api/menu", menuRoutes);
-app.use("/api/orders", orderRoutes);
+app.use("/menu", menuRoutes);
+app.use("/orders", orderRoutes);
 
 // 404 handler
 app.use(notFound);
