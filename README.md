@@ -134,3 +134,8 @@ Tests cover:
 | MONGODB_URI     | mongodb://localhost:27017/food-delivery      | MongoDB URI           |
 | MONGODB_URI_TEST| mongodb://localhost:27017/food-delivery-test | Test DB URI           |
 | NODE_ENV        | development                                  | Environment           |
+
+
+## Author
+
+- **Tauseef Akhtar** - *Initial Work / Developer* - https://github.com/Presidnttsf/food-delivery-backend
