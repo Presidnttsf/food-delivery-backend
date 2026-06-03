@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Food Delivery Order Management Backend API",
   "main": "server.js",
-   "author": "Tauseef Akhtar",
+  "author": "Tauseef Akhtar",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
@@ -12,6 +12,7 @@
     "seed": "node seed.js"
   },
   "dependencies": {
+    "cors": "^2.8.6",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.4.1"
