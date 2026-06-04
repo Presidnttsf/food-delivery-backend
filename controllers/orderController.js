@@ -29,4 +29,14 @@ const updateOrderStatus = async (req, res, next) => {
   }
 };
 
-module.exports = { createOrder, getOrderById, updateOrderStatus };
+const updateOrderToNextStatus = asyncHandler(async (req, res) => {
+  const order = await orderService.updateOrderToNextStatus(
+    req.params.id
+  );
+
+  res.status(200).json(order);
+});
+
+
+
+module.exports = { createOrder, getOrderById, updateOrderStatus, updateOrderToNextStatus };

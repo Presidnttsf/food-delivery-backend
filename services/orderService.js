@@ -91,4 +91,31 @@ const updateOrderStatus = async (id, status) => {
   return order;
 };
 
-module.exports = { createOrder, getOrderById, updateOrderStatus };
+const updateOrderToNextStatus = async (id) => {
+  const order = await Order.findById(id);
+
+  if (!order) {
+    const err = new Error("Order not found");
+    err.statusCode = 404;
+    throw err;
+  }
+
+  const statusFlow = [
+    "ORDER_RECEIVED",
+    "PREPARING",
+    "OUT_FOR_DELIVERY",
+    "DELIVERED",
+  ];
+
+  const currentIndex = statusFlow.indexOf(order.status);
+
+  if (currentIndex < statusFlow.length - 1) {
+    order.status = statusFlow[currentIndex + 1];
+    await order.save();
+  }
+
+  return order;
+};
+
+
+module.exports = { createOrder, getOrderById, updateOrderStatus, updateOrderToNextStatus };
