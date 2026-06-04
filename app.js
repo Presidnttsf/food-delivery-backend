@@ -13,7 +13,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://food-delivery-frontend-opal.vercel.app/",
+      "https://food-delivery-frontend-opal.vercel.app",
     ],
   })
 );
